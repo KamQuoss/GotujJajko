@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="top">
+        <h1>Ugotuj jajo</h1>
+        <p class="text-center">Jajko gotujemy wkładając je do zimnej wody, czas liczymy od momentu zagotowania</p>        
+    </div>
+
+    <div class="animal_choice" onload="chceckAnimal">
+        <h1>Wybierz rodzaj jajka</h1>
+        <label>
+            <input type="radio" name="animal" value="kura" checked />
+            <div class="front-end box">
+                <span>  kura</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="ges" />
+            <div class="back-end box">
+                <span>  gęś</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="strus" />
+            <div class="back-end box">
+                <span>  struś</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="kaczka" />
+            <div class="back-end box">
+                <span>  kaczka</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="przepiorka" />
+            <div class="back-end box">
+                <span> przepiórka</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="indyk" />
+            <div class="back-end box">
+                <span>  indyk</span>
+            </div>
+        </label>
+        <label>
+            <input type="radio" name="animal" value="perliczka" />
+            <div class="back-end box">
+                <span>  perliczka</span>
+            </div>
+        </label>
+    </div>
+    <div id="egg_container">
+
+    </div>
+
+    <div class="timer">
+        <div id="licznik">--:--</div>
+        <button id="button">Start</button>
+    </div>
+
+    <script src="js/main2.js"></script>
+
+</body>
+
+</html>
