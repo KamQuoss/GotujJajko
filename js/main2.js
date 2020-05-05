@@ -10,8 +10,8 @@ const sformatowanyTekst = function (liczbaSekund) {
     return sformatowany;
 };
 
-//pobieram kontener na licznik czasu
-const kontenerLicznik = document.getElementById('licznik');
+//pobieram kontener na counter czasu
+const kontenercounter = document.getElementById('counter');
 
 //pobieram kontener na jajko
 const kontenerJajko = document.getElementById('egg_container');
@@ -33,42 +33,42 @@ const Animal = {
 //         switch (jakieZwierze) {
 //             case "kura":
 //                 let czas = Animal.kura;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/kura.png'>";
 //                 break;
 //             case "ges":
 //                 czas = Animal.ges;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/ges.png'>";
 //                 break;
 //             case "strus":
 //                 czas = Animal.strus;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/strus.png'>";
 //                 break;
 //             case "kaczka":
 //                 czas = Animal.kaczka;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/kaczka.png'>";
 //                 break;
 //             case "przepiorka":
 //                 czas = Animal.przepiorka;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/przepiorka.png'>";
 //                 break;
 //             case "indyk":
 //                 czas = Animal.indyk;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/indyk.png'>";
 //                 break;
 //             case "strus":
 //                 czas = Animal.strus;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/strus.png'>";
 //                 break;
 //             case "perliczka":
 //                 czas = Animal.perliczka;
-//                 kontenerLicznik.innerHTML = sformatowanyTekst(czas);
+//                 kontenercounter.innerHTML = sformatowanyTekst(czas);
 //                 kontenerJajko.innerHTML = "<img src='img/perliczka.png'>";
 //                 break;
 //         }
@@ -86,16 +86,10 @@ const Animal = {
 
 var progress = false;
 
-
-
-
-
-
-
 function prepareEgg (animal) {
     return function (gotowanie){
        console.log(`Zajmie mi to ${sformatowanyTekst(gotowanie)} minut.`);
-        kontenerLicznik.innerHTML = sformatowanyTekst(gotowanie);
+        kontenercounter.innerHTML = sformatowanyTekst(gotowanie);
         console.log(sformatowanyTekst(gotowanie));
         console.log(`Przygotuję jajko ${animal}.`);
         kontenerJajko.innerHTML = `<img src='img/${animal}.png'>`;
@@ -132,7 +126,7 @@ console.log(ileGotowac(jajeczko()));
 
 const BoilEgg = prepareEgg(jajeczko())(ileGotowac(jajeczko()));
 
-//tutaj nie rozumiem czemu jak klikam na element formularza to nie zmienia mi jajka i licznika
+//tutaj nie rozumiem czemu jak klikam na element formularza to nie zmienia mi jajka i countera
 const form = document.querySelector(".animal_choice");
 form.addEventListener('click', BoilEgg);
 
@@ -161,19 +155,19 @@ btn.addEventListener('click', function () {
     let i = czas;
     const time = setInterval(function () {
         //console.log(i);
-        kontenerLicznik.innerHTML = sformatowanyTekst(i - 1)
+        kontenercounter.innerHTML = sformatowanyTekst(i - 1)
         i--;
 
         if (i == 30 || i == 20 || i <= 10 & i > 0) {
-            kontenerLicznik.className = "red";
+            kontenercounter.className = "red";
         } else {
-            kontenerLicznik.className = "";
+            kontenercounter.className = "";
         };
 
         if (i < 0) {
             this.disabled = false;
             console.log('koniec');
-            kontenerLicznik.innerHTML = "--:--";
+            kontenercounter.innerHTML = "--:--";
             clearInterval(time);
             for (ele of input) {
                 ele.disabled = false;
